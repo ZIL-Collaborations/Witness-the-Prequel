@@ -4,7 +4,7 @@
 
 See Jason's original Intfiction post [here](https://intfiction.org/t/iso-zil-surgeon-interested-in-franken-witness/45989).
 
-And here is Jason's pitch (extracted from Discord discussion):
+And here is Jason's pitch (extracted from Discord discussion):  
 "The nice part about Witness: The Prequel is that the map is already made. :) If I were to sit down and start working on it, I'd start with outlining the basics: you're Monica, in the workshop, you've gotta do thing X, Y, and Z before the doorbell rings, and these are the obstacles (you need Phong's help to do Y, and you can't let Linder see you do Z, for example) and then from there it would probably be a collaboration on "okay is that actually any good" and then "okay now what else do we implement for unexpected/bad/dumb/wrong actions, and losing cases other than 'you didn't finish setting up the murder plot before the doorbell rang'"?)"
 
 "My starting concept is that the game begins at 7:00 pm. Monica is (you are) in the workshop putting the finishing touches on the plastic explosive or whatever. At 8:0x the doorbell will ring and Phong will open the door for The Detective, so by then you've gotta do some set of tasks like:
