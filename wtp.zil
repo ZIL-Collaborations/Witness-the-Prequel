@@ -154,7 +154,7 @@ side, which fronts on dense bamboo woods. The house looks like a mixture of
 a California bungalow and East Asian influences. From here you can
 see the driveway leading north and, beyond that, the front door.")
     (NORTH TO DRIVEWAY)
-    (SOUTH "You can't leave the property yet. It would mean your job.")
+    (SOUTH "You can't leave before that flatfoot arrives.")
     (EAST  TO SIDE-YARD)
     (WEST  "A wooden fence blocks your way.")
     (FLAGS LIGHTBIT)
