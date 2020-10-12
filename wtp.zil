@@ -4,7 +4,7 @@
 
 <CONSTANT GAME-TITLE "Witness: The Prequel">
 <CONSTANT GAME-DESCRIPTION
-"A mystery story by Friends of ZILF">
+"A mystery story by Friends of ZILF, based upon characters and scenarios created by Stu Galley for Infocom, Inc.">
 
 <CONSTANT RELEASEID 1> <VERSION ZIP TIME>
 
@@ -109,7 +109,7 @@
 
 <ROOM FRONT-YARD (DESC "Front Yard") (IN ROOMS)
     (LDESC
-"You are in the front yard of the Linder property. Most of the space is
+"You are in your front yard. Most of the space is
 occupied by a kitchen garden full of vegetables and herbs. A wooden
 fence surrounds the yard on the west and north sides. To the east is the
 house, with a French door and two windows. To the south is a gate that
@@ -148,7 +148,7 @@ front porch, the entrance to the house.")
 <ROOM DRIVEWAY-ENTRANCE (DESC "Driveway Entrance") (IN ROOMS)
     (LDESC
 "You are standing at the foot of the driveway, the entrance to the
-Linder property. The entire lot is screened from the street and the
+family property. The entire lot is screened from the street and the
 neighbors by a wooden fence, except on the east
 side, which fronts on dense bamboo woods. The house looks like a mixture of
 a California bungalow and East Asian influences. From here you can
@@ -178,11 +178,11 @@ see the driveway leading north and, beyond that, the front door.")
 <ROOM OFFICE-PATH (DESC "office path") (IN ROOMS)
     (LDESC
 "You are on a path made of stepping stones, which leads from the back
-gate at the south to Linder's office at the north. In the east you
+gate at the south to Dad's office at the north. In the east you
 can see a thick woods. To the west is the side yard.")
     (NORTH TO OFFICE-PORCH)
-    (SOUTH "You can't leave the property yet. It would mean your job.")
-    (EAST  "You would probably get lost in the woods.")
+    (SOUTH "You can't leave before that flatfoot arrives.")
+    (EAST  "No time to gambol in the woods.")
     (WEST  TO SIDE-YARD)
     (FLAGS LIGHTBIT)
 >
@@ -190,7 +190,7 @@ can see a thick woods. To the west is the side yard.")
 <ROOM OFFICE-PORCH (DESC "office porch") (IN ROOMS)
 	(NORTH TO BACK-YARD)
 	(SOUTH TO OFFICE-PATH)
-	(EAST "You would probably get lost in the woods.")
+	(EAST "No time to gambol in the woods.")
 	(WEST TO OFFICE ;IF ;OFFICE-BACK-DOOR ;IS ;OPEN)
     (IN TO OFFICE ;IF ;OFFICE-BACK-DOOR ;IS ;OPEN)
     ;(ACTION OFFICE-PORCH-F)
@@ -199,20 +199,20 @@ can see a thick woods. To the west is the side yard.")
 
 <ROOM BACK-YARD (DESC "back yard") (IN ROOMS)
     (LDESC
-"You are on a neatly manicured lawn, east of Monica's bedroom. The lawn
+"You are on a neatly manicured lawn, east of your bedroom. The lawn
 extends east to the edge of the woods. From here you can go to a rock
-garden in the north or the entrance to Linder's office in the south.
+garden in the north or the entrance to Dad's office in the south.
 There's a door into the house, and a window.")
 	(NORTH TO ROCK-GARDEN)
 	(SOUTH TO OFFICE-PORCH)
-	(EAST  "You would probably get lost in the woods.")
+	(EAST  "No time to gambol in the woods.")
 	(WEST  TO MONICA-ROOM ;IF ;MONICA-BACK-DOOR ;IS ;OPEN)
     (FLAGS LIGHTBIT)
 >
 
 <ROOM ROCK-GARDEN (DESC "rock garden") (IN ROOMS)
     (LDESC
-"This is a rock garden in the Japanese style, east of Linder's bedroom.
+"This is a rock garden in the Japanese style, east of Dad's bedroom.
 A few smooth round boulders lie partly buried in a bed of gravel,
 which is carefully raked to be reminiscent of flowing water.
 A sequence of smaller rocks forms a zig-zag path from the bedroom door to
@@ -220,12 +220,12 @@ the south edge of the garden, where the lawn begins.
 There's a door into the house, and a couple of windows.")
     (NORTH "A wooden fence blocks your way.")
     (SOUTH TO BACK-YARD)
-    (EAST  "You would probably get lost in the woods.")
+    (EAST  "No time to gambol in the woods.")
     (WEST  TO LINDER-ROOM ;IF ;LINDER-BACK-DOOR ;IS ;OPEN)
     (FLAGS LIGHTBIT)
 >
 
-<ROOM MONICA-ROOM (DESC "Monica's bedroom") (IN ROOMS)
+<ROOM MONICA-ROOM (DESC "Your bedroom") (IN ROOMS)
     (NORTH TO BATHROOM ;IF ;MONICA-BATH-DOOR ;IS ;OPEN)
     (EAST TO BACK-YARD ;IF ;MONICA-BACK-DOOR ;IS ;OPEN)
     (OUT  TO BACK-YARD ;IF ;MONICA-BACK-DOOR ;IS ;OPEN)
@@ -239,7 +239,7 @@ There's a door into the house, and a couple of windows.")
     (LDESC
 "This room has only a large cabinet with counter, sink and mirror.
 On the counter are a shaver, toothpaste, and so on.
-The tub and toilet must be in separate rooms.
+The tub and toilet are in separate rooms.
 There are doors on all four walls: the one to the north looks like redwood,
 the one to the south like cedar, and the other two like ordinary doors.")
     (NORTH TO LINDER-ROOM ;IF ;LINDER-BATH-DOOR ;IS ;OPEN)
@@ -270,7 +270,7 @@ leads west.")
     (FLAGS LIGHTBIT)
 >
 
-<ROOM LINDER-ROOM (DESC "Linder's bedroom") (IN ROOMS)
+<ROOM LINDER-ROOM (DESC "Dad's bedroom") (IN ROOMS)
     (SOUTH TO BATHROOM ;IF ;LINDER-BATH-DOOR ;IS ;OPEN)
     (EAST TO ROCK-GARDEN ;IF ;LINDER-BACK-DOOR ;IS ;OPEN)
     (OUT  TO ROCK-GARDEN ;IF ;LINDER-BACK-DOOR ;IS ;OPEN)
@@ -303,7 +303,7 @@ Through a French door on the west wall you can see the front yard.")
 
 <ROOM KITCHEN (DESC "kitchen") (IN ROOMS)
     (LDESC
-"The Linder kitchen is full of electric appliances: range and hood,
+"Your kitchen is full of electric appliances: range and hood,
 refrigerator, mixer, toaster, clock, and so on. Several white steel
 cabinets make for plenty of storage space. To the north is the dining
 room, to the east the hall.")
@@ -351,7 +351,7 @@ room, to the east the hall.")
 	(DESC "hallway")
 	(IN ROOMS)
 	(LDESC
-"This hallway seems to run the length of the house, from the garage
+"This hallway runs the length of the house, from the garage
 at the south end to the living room at the north. There is enough warm yellow
 light flooding from the living room for you to see a few doors on each side
 of the hall.")
@@ -408,9 +408,9 @@ to the south is a door. Other doors on both sides lead to other rooms.")
     (FLAGS LIGHTBIT)
 >
 
-<ROOM WORKSHOP (DESC "workshop") (IN ROOMS)
+<ROOM WORKSHOP (DESC "Workshop") (IN ROOMS)
 	(LDESC
-"This room is a well-equipped workshop. Besides the usual sort of tools,
+"This room is your well-equipped workshop. Besides the usual sort of tools,
 the place is full of mechanical and electrical parts and supplies:
 switches, relays, spools of colored wire, and so on. One wall holds the
 main electric board and a home-made junction box with more wires going
