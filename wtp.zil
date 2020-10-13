@@ -400,6 +400,8 @@ to the south is a door. Other doors on both sides lead to other rooms.")
     (FLAGS LIGHTBIT)
 >
 
+"Lots of fun to be had (for someone) implementing the butler button in the office. Once repaired, if Monica presses it after the putty is installed, it blows the window and ruins the plot. If Monica presses it after the gun and mechanism are installed, either she gets killed or it puts a hole in the wall, ruining the plot."
+
 <ROOM OFFICE (DESC "office") (IN ROOMS)
 	(EAST TO OFFICE-PORCH ;IF ;OFFICE-BACK-DOOR ;IS ;OPEN)
 	(OUT  TO OFFICE-PORCH ;IF ;OFFICE-BACK-DOOR ;IS ;OPEN)
@@ -415,6 +417,8 @@ to the south is a door. Other doors on both sides lead to other rooms.")
     ;(ACTION GARAGE-F)
     (FLAGS LIGHTBIT)
 >
+
+"Workshop will get a bunch of one-time text after the start banner/version/etc. which explains that Phong is waiting for Monica to unhook the gun from the mechanism so he can take it and the ballistics box away."
 
 <ROOM WORKSHOP (DESC "Workshop") (IN ROOMS)
 	(LDESC
