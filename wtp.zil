@@ -48,7 +48,15 @@
 "Introduction"
 
 <ROUTINE INTRODUCE-THE-GAME ()
-    <TELL CR CR "This game needs an introduction ..." CR>
+    <TELL CR CR "
+    BANG!||
+    \"Monica.\"||
+    \"Monica, it worked. You can open your eyes now.\"||
+    But not just yet. You won't be here to smell the gunpowder, or to watch the old man slump over his desk.
+    You won't be here when he realizes he can't manipulate his way out of this pickle. When he realizes he signed his own death warrant.||
+    But you can imagine it. Just a moment longer.||
+    Finally, you allow your eyes to float open. \"Yes, Phong. It worked. Everything is on schedule.\"
+    " CR>
     <CRLF> <V-VERSION>
     <CRLF> <V-LOOK>
 >
