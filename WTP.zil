@@ -12,10 +12,6 @@
 
 "THE MECHANICS"
 
-"Game mechanics are mostly provided by the ZILF Library but can be modified or
-enhanced with custom interaction and behaviour which may also be reused as
-library extensions."
-
 "Startup"
 
 <ROUTINE GO ()
@@ -27,27 +23,20 @@ library extensions."
 "Library and Extensions"
 
 <INSERT-FILE "parser">
-;<INSERT-FILE "../Extensions/Scoring">
-;<INSERT-FILE "../Extensions/Finishing">
+<INSERT-FILE "../Extensions/Finishing">
 
 "Game Specific Interaction and Behaviour"
 
 <INSERT-FILE "Actions">
 <INSERT-FILE "Activities">
 
-"Extra Game Verbs"
-
-;<SETG EXTRA-GAME-VERBS
-   '(NOTIFY-OFF NOTIFY-ON SCORE ;"from Scoring"
-    )
->
+"Extra Game Verbs - None"
 
 "Library Hooks"
 
-;<BIND ((REDEFINE T))
+<BIND ((REDEFINE T))
     <DEFMAC HOOK-END-OF-COMMAND ()
        '<BIND ()
-            <NOTIFY-IF-SCORE-UPDATED> ;"Scoring"
             <FINISH-IF-CODE-SET>      ;"Finishing"
         >
     >
@@ -55,12 +44,6 @@ library extensions."
 
 
 "THE GAME"
-
-"ZILF games are a form of Interactive Fiction. They can be thought of as telling
-a story in which the player can take part. Expressed in the language of
-storytelling, each game has a cast, a setting, and a plot."
-
-"Also, each game starts with setting the scene and an introduction."
 
 "Setting the Scene"
 
