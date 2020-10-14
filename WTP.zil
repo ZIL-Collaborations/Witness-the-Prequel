@@ -4,8 +4,8 @@
 
 <CONSTANT GAME-TITLE "Witness: The Prequel">
 <CONSTANT GAME-DESCRIPTION
-"A mystery story by Friends of ZILF, based upon characters and scenarios
-created by Stu Galley for Infocom, Inc.">
+"A mystery story by Friends of ZILF|
+(based upon characters and scenarios created by Stu Galley for Infocom, Inc.)">
 
 <CONSTANT RELEASEID 1> <VERSION ZIP TIME>
 
@@ -74,14 +74,14 @@ storytelling, each game has a cast, a setting, and a plot."
 
 <ROUTINE INTRODUCE-THE-GAME ()
     <TELL CR CR "
-    BANG!||
-    \"Monica.\"||
-    \"Monica, it worked. You can open your eyes now.\"||
-    But not just yet. You won't be here to smell the gunpowder, or to watch the old man slump over his desk.
-    You won't be here when he realizes he can't manipulate his way out of this pickle. When he realizes he signed his own death warrant.||
-    But you can imagine it. Just a moment longer.||
-    Finally, you allow your eyes to float open. \"Yes, Phong. It worked. Everything is on schedule.\"
-    " CR>
+BANG!||
+\"Monica.\"||
+\"Monica, it worked. You can open your eyes now.\"||
+But not just yet. You won't be here to smell the gunpowder, or to watch the old man slump over his desk.
+You won't be here when he realizes he can't manipulate his way out of this pickle. When he realizes he signed his own death warrant.||
+But you can imagine it. Just a moment longer.||
+Finally, you allow your eyes to float open. \"Yes, Phong. It worked. Everything is on schedule.\"
+" CR>
     <CRLF> <V-VERSION>
     <CRLF> <V-LOOK>
 >
