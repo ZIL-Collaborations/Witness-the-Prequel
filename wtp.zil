@@ -1,17 +1,18 @@
 "W I T N E S S :   T H E   P R E Q U E L "
 
-"THE PROJECT"
+"T H E   P R O J E C T"
 
 <CONSTANT GAME-TITLE "Witness: The Prequel">
 <CONSTANT GAME-DESCRIPTION
-"A mystery story by Friends of ZILF, based upon characters and scenarios created by Stu Galley for Infocom, Inc.">
+"A mystery story by Friends of ZILF, based upon characters and scenarios
+created by Stu Galley for Infocom, Inc.">
 
 <CONSTANT RELEASEID 1> <VERSION ZIP TIME>
 
 
-"THE MECHANICS"
+"T H E   M E C H A N I C S"
 
-"Startup"
+"STARTUP"
 
 <ROUTINE GO ()
     <SET-THE-SCENE>
@@ -20,23 +21,23 @@
 >
 
 
-"Library and Extensions"
+"LIBRARY AND EXTENSIONS"
 
 <INSERT-FILE "parser">
 
 
-"Game Specific Interaction"
+"GAME SPECIFIC INTERACTION"
 
-"Game Specific Behaviour"
+"GAME SPECIFIC BEHAVIOUR"
 
-"Extra Game Verbs"
+"EXTRA GAME VERBS"
 
-"Library Hooks"
+"LIBRARY HOOKS"
 
 
-"THE GAME"
+"T H E   G A M E"
 
-"Setting the Scene"
+"SETTING THE SCENE"
 
 <ROUTINE SET-THE-SCENE ()
     <SETG SCORE 20>
@@ -45,7 +46,7 @@
 >
 
 
-"Introduction"
+"INTRODUCTION"
 
 <ROUTINE INTRODUCE-THE-GAME ()
     <TELL CR CR "
@@ -62,15 +63,48 @@
 >
 
 
-"Cast"
+"CAST"
 
 
-"Setting"
+"SETTING"
+
+"Backdrops, Doors and Scenery"
 
 <OBJECT HOUSE (DESC "house") (IN LOCAL-GLOBALS)
+    (LDESC "The house looks like a mixture of a California bungalow and East
+Asian influences.")
     (SYNONYM HOUSE)
     (ADJECTIVE LINDER)
     ;(ACTION HOUSE-F)
+>
+
+<OBJECT WOODS (DESC "bamboo woods") (IN LOCAL-GLOBALS)
+    (LDESC "Bamboo, thick and tall, screens the entire lot on the east side.")
+    (ADJECTIVE DENSE THICK DARK BAMBOO)
+    (SYNONYM WOODS FOREST THICKET)
+    ;(ACTION LAKE-F)>
+
+<OBJECT FRONT-DOOR (DESC "front door") (IN LOCAL-GLOBALS)
+    (ADJECTIVE FRONT)
+    (SYNONYM DOOR LOCK)
+    ;(ACTION FRONT-DOOR-F)
+    ;(GENERIC LOCKED-F)
+    (FLAGS DOORBIT OPENABLEBIT LOCKEDBIT)
+>
+
+<OBJECT FENCE (DESC "fence") (IN LOCAL-GLOBALS)
+    (LDESC "This is a Japanese-style \"shadow fence\" made of wooden slats,
+opaque from most angles but designed to let breezes through.")
+    (SYNONYM FENCE)
+    ;(ACTION FENCE-F)
+>
+
+<OBJECT DRIVEWAY-OBJECT (DESC "driveway") (IN LOCAL-GLOBALS)
+    (LDESC "The driveway, paved with peastone, runs from the entrance at the
+south end in a curve to a two-car garage at the east end.")
+    (ADJECTIVE DRIVE)
+    (SYNONYM DRIVEWAY WAY)
+    ;(ACTION DRIVEWAY-F)
 >
 
 <OBJECT DINING-DOOR (DESC "french door") (IN LOCAL-GLOBALS)
@@ -99,72 +133,61 @@
 <OBJECT FRONT-GATE (DESC "front gate") (IN LOCAL-GLOBALS)
     (ADJECTIVE FRONT)
     (SYNONYM GATE)
-    (FLAGS DOORBIT)
+    (FLAGS DOORBIT OPENABLEBIT)
 >
 
-<OBJECT FRONT-DOOR (DESC "front door") (IN LOCAL-GLOBALS)
-    (ADJECTIVE FRONT)
-    (SYNONYM DOOR LOCK)
-    ;(ACTION FRONT-DOOR-F)
-    ;(GENERIC LOCKED-F)
-    (FLAGS DOORBIT LOCKEDBIT)
->
 
-<OBJECT FENCE (DESC "fence") (IN LOCAL-GLOBALS)
-    (SYNONYM FENCE)
-    ;(ACTION FENCE-F)
->
+"Locations and Items"
 
 <ROOM FRONT-YARD (DESC "Front Yard") (IN ROOMS)
-    (LDESC
-"You are in your front yard. Most of the space is
-occupied by a kitchen garden full of vegetables and herbs. A wooden
-fence surrounds the yard on the west and north sides. To the east is the
-house, with a French door and two windows. To the south is a gate that
-leads to the front porch.")
+    (LDESC "You are in your front yard. Most of the space is occupied by a
+kitchen garden full of vegetables and herbs. A wooden fence surrounds the yard
+on the west and north sides. To the east is the house, with a French door and
+two windows. To the south is a gate that leads to the front porch.")
     (NORTH "A wooden fence blocks your way.")
-    (SOUTH TO FRONT-PORCH ;IF ;FRONT-GATE ;IS ;OPEN)
-    (EAST  TO DINING-ROOM ;IF ;DINING-DOOR ;IS ;OPEN)
+    (SOUTH TO FRONT-PORCH IF FRONT-GATE IS OPEN)
+    (EAST  TO DINING-ROOM IF DINING-DOOR IS OPEN)
     (WEST  "A wooden fence blocks your way.")
-    (GLOBAL HOUSE DINING-DOOR KITCHEN-WINDOW BUTLER-WINDOW
-        FRONT-GATE FRONT-DOOR FENCE)
+    (GLOBAL HOUSE DINING-DOOR KITCHEN-WINDOW BUTLER-WINDOW FRONT-GATE
+        FRONT-DOOR FENCE)
     (FLAGS LIGHTBIT)
 >
 
 <ROOM FRONT-PORCH (DESC "Front Porch") (IN ROOMS)
-    (NORTH TO FRONT-YARD ;IF ;FRONT-GATE ;IS ;OPEN)
+    (NORTH TO FRONT-YARD IF FRONT-GATE IS OPEN)
     (SOUTH TO DRIVEWAY)
-    (EAST  TO ENTRY ;IF ;FRONT-DOOR ;IS ;OPEN)
-    (IN TO ENTRY ;IF ;FRONT-DOOR ;IS ;OPEN)
+    (EAST  TO ENTRY IF FRONT-DOOR IS OPEN)
+    (IN TO ENTRY IF FRONT-DOOR IS OPEN)
     (WEST "A wooden fence blocks your way.")
     ;(ACTION FRONT-PORCH-F)
+    (GLOBAL HOUSE FRONT-DOOR FRONT-GATE FENCE DRIVEWAY-OBJECT)
     (FLAGS LIGHTBIT)
 >
 
 <ROOM DRIVEWAY (DESC "Driveway") (IN ROOMS)
-    (LDESC
-"The driveway, paved with peastone, runs from the entrance at the south
-end in a curve to a two-car garage at the east end. North of you is the
+    (LDESC "The driveway, paved with peastone, runs from the entrance at the
+south end in a curve to a two-car garage at the east end. North of you is the
 front porch, the entrance to the house.")
     (NORTH TO FRONT-PORCH)
     (SOUTH TO DRIVEWAY-ENTRANCE)
     (EAST  TO GARAGE)
     (WEST  "A wooden fence blocks your way.")
+    (GLOBAL HOUSE FRONT-DOOR FENCE DRIVEWAY-OBJECT)
     (FLAGS LIGHTBIT)
 >
 
 <ROOM DRIVEWAY-ENTRANCE (DESC "Driveway Entrance") (IN ROOMS)
-    (LDESC
-"You are standing at the foot of the driveway, the entrance to the
-family property. The entire lot is screened from the street and the
-neighbors by a wooden fence, except on the east
-side, which fronts on dense bamboo woods. The house looks like a mixture of
-a California bungalow and East Asian influences. From here you can
-see the driveway leading north and, beyond that, the front door.")
+    (LDESC "You are standing at the foot of the driveway, the entrance to the
+family property. The entire lot is screened from the street and the neighbors
+by a wooden fence, except on the east side, which fronts on dense bamboo woods.
+The house looks like a mixture of a California bungalow and East Asian
+influences. From here you can see the driveway leading north and, beyond that,
+the front door.")
     (NORTH TO DRIVEWAY)
     (SOUTH "You can't leave before that flatfoot arrives.")
     (EAST  TO SIDE-YARD)
     (WEST  "A wooden fence blocks your way.")
+    (GLOBAL HOUSE WOODS FRONT-DOOR FENCE DRIVEWAY-OBJECT)
     (FLAGS LIGHTBIT)
 >
 
@@ -433,4 +456,4 @@ came in.")
 >
 
 
-"Plot"
+"PLOT"
