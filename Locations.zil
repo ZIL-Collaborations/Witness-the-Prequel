@@ -383,7 +383,7 @@ to the south is a door. Other doors on both sides lead to other rooms.")
 the place is full of mechanical and electrical parts and supplies:
 switches, relays, spools of colored wire, and so on. One wall holds the
 main electric board and a home-made junction box with more wires going
-in and out than you can shake a stick at. The only door is the one you
+in and out than you can shake a stick at. The only door is to the west, the way you
 came in.")
 	(WEST TO GARAGE ;IF ;WORKSHOP-DOOR ;IS ;OPEN)
     (FLAGS LIGHTBIT)
