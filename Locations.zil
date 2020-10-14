@@ -1,72 +1,6 @@
-"W I T N E S S :   T H E   P R E Q U E L "
+"G A M E  -  Locations File"
 
-"T H E   P R O J E C T"
-
-<CONSTANT GAME-TITLE "Witness: The Prequel">
-<CONSTANT GAME-DESCRIPTION
-"A mystery story by Friends of ZILF, based upon characters and scenarios
-created by Stu Galley for Infocom, Inc.">
-
-<CONSTANT RELEASEID 1> <VERSION ZIP TIME>
-
-
-"T H E   M E C H A N I C S"
-
-"STARTUP"
-
-<ROUTINE GO ()
-    <SET-THE-SCENE>
-    <INTRODUCE-THE-GAME>
-    <MAIN-LOOP>
->
-
-
-"LIBRARY AND EXTENSIONS"
-
-<INSERT-FILE "parser">
-
-
-"GAME SPECIFIC INTERACTION"
-
-"GAME SPECIFIC BEHAVIOUR"
-
-"EXTRA GAME VERBS"
-
-"LIBRARY HOOKS"
-
-
-"T H E   G A M E"
-
-"SETTING THE SCENE"
-
-<ROUTINE SET-THE-SCENE ()
-    <SETG SCORE 20>
-    <SETG HERE WORKSHOP>
-    <MOVE PLAYER ,HERE>
->
-
-
-"INTRODUCTION"
-
-<ROUTINE INTRODUCE-THE-GAME ()
-    <TELL CR CR "
-    BANG!||
-    \"Monica.\"||
-    \"Monica, it worked. You can open your eyes now.\"||
-    But not just yet. You won't be here to smell the gunpowder, or to watch the old man slump over his desk.
-    You won't be here when he realizes he can't manipulate his way out of this pickle. When he realizes he signed his own death warrant.||
-    But you can imagine it. Just a moment longer.||
-    Finally, you allow your eyes to float open. \"Yes, Phong. It worked. Everything is on schedule.\"
-    " CR>
-    <CRLF> <V-VERSION>
-    <CRLF> <V-LOOK>
->
-
-
-"CAST"
-
-
-"SETTING"
+"THE SETTING"
 
 "Backdrops, Doors and Scenery"
 
@@ -454,6 +388,3 @@ came in.")
 	(WEST TO GARAGE ;IF ;WORKSHOP-DOOR ;IS ;OPEN)
     (FLAGS LIGHTBIT)
 >
-
-
-"PLOT"
