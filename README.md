@@ -1,4 +1,4 @@
 # Witness: The Prequel
 
-During development, this will all be kept on the [wiki](https://github.com/ZIL-Collaborations/Witness-the-Prequel/wiki)
+During development, the docs will all be kept on the [wiki](https://github.com/ZIL-Collaborations/Witness-the-Prequel/wiki)
 
