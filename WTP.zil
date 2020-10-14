@@ -48,7 +48,7 @@
 "Setting the Scene"
 
 <ROUTINE SET-THE-SCENE ()
-    <SETG SCORE 20>
+    <SETG SCORE 19>
     <SETG HERE WORKSHOP>
     <MOVE PLAYER ,HERE>
 >
