@@ -2,6 +2,8 @@
 
 "THE SETTING"
 
+"Put non-character objects and rooms here."
+
 "Backdrops, Doors and Scenery"
 
 <OBJECT HOUSE (DESC "house") (IN LOCAL-GLOBALS)
@@ -73,6 +75,7 @@ south end in a curve to a two-car garage at the east end.")
 
 "Locations and Items"
 
+"------------------------------------------------------------------------------"
 <ROOM FRONT-YARD (DESC "Front Yard") (IN ROOMS)
     (LDESC "You are in your front yard. Most of the space is occupied by a
 kitchen garden full of vegetables and herbs. A wooden fence surrounds the yard
@@ -87,17 +90,48 @@ two windows. To the south is a gate that leads to the front porch.")
     (FLAGS LIGHTBIT)
 >
 
+"------------------------------------------------------------------------------"
 <ROOM FRONT-PORCH (DESC "Front Porch") (IN ROOMS)
     (NORTH TO FRONT-YARD IF FRONT-GATE IS OPEN)
     (SOUTH TO DRIVEWAY)
     (EAST  TO ENTRY IF FRONT-DOOR IS OPEN)
     (IN TO ENTRY IF FRONT-DOOR IS OPEN)
     (WEST "A wooden fence blocks your way.")
-    ;(ACTION FRONT-PORCH-F)
+    (ACTION FRONT-PORCH-F)
     (GLOBAL HOUSE FRONT-DOOR FRONT-GATE FENCE DRIVEWAY-OBJECT)
     (FLAGS LIGHTBIT)
 >
 
+<ROUTINE FRONT-PORCH-F ("OPTIONAL" (RARG <>))
+	 <COND (<==? .RARG ,M-LOOK>
+		<DDESC
+"The front porch is in an alcove, sheltered from the weather by the
+walls and overhanging roof. A yellowish electric light hangs near
+the " ,FRONT-DOOR " front door to the east, giving you a
+dim view of the
+driveway to the south and the front yard behind a gate to the north.">
+		<DDESC
+"The gate is " ,FRONT-GATE
+". A door bell glows at you, almost daring you to ring it.">
+		<THIS-IS-IT ,DOORBELL>)>
+>
+
+<ROUTINE DDESC (STR1 DOOR STR2)
+	 #DECL ((STR1) <OR STRING ZSTRING> (DOOR) OBJECT
+		(STR2) <OR FALSE STRING ZSTRING>)
+	 <TELL .STR1>
+	 <COND (<FSET? .DOOR ,OPENBIT> <TELL "open">)
+	       (T <TELL "closed">)>
+	 <TELL .STR2 CR>>
+
+<OBJECT DOORBELL (DESC "door bell") (IN FRONT-PORCH)
+	(ADJECTIVE DOOR)
+	(SYNONYM BELL DOORBELL)
+	;(ACTION DOORBELL-F)
+	(FLAGS NDESCBIT)
+>
+
+"------------------------------------------------------------------------------"
 <ROOM DRIVEWAY (DESC "Driveway") (IN ROOMS)
     (LDESC "The driveway, paved with peastone, runs from the entrance at the
 south end in a curve to a two-car garage at the east end. North of you is the
